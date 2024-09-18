@@ -1,1 +1,139 @@
-<p>client works!</p>
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">
+        Client Lis
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sr no</th>
+                    <th>Company Name</th>
+                    <th>Person ame</th>
+                    <th>Contact No</th>
+                    <th>city</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of celientList; track $index) {
+                  <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ item.companyName }}</td>
+                    <td>{{ item.contactPersonName }}</td>
+                    <td>{{ item.contactNo }}</td>
+                    <td>{{ item.city }}</td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">New Client</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="">PersonName</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.contactPersonName"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">companyName</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.companyName"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">ContactNo</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.contactNo"
+              class="form-control"
+            />
+          </div>
+
+          <div class="col-6">
+            <label for="">city</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.city"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">State</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.state"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">Pincode</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.pincode"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">Address</label>
+            <textarea
+              name=""
+              id=""
+              [(ngModel)]="clientObj.address"
+              class="form-control"
+            ></textarea>
+          </div>
+          <div class="col-6">
+            <label for="">EmployeeStrength</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.employeeStrength"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">gstNo</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.gstNo"
+              class="form-control"
+            />
+          </div>
+
+          <div class="col-6">
+            <label for="">regNo</label>
+            <input
+              type="text"
+              [(ngModel)]="clientObj.regNo"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col-6 text-center">
+            <button class="btn btn-secondary">Seset</button>
+          </div>
+          <div class="col-6 text-center">
+            <button class="btn btn-success" (click)="onSeveClient()">
+              Save Client
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
