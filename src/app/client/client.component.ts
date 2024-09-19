@@ -34,9 +34,28 @@ export class ClientComponent implements OnInit {
         if (res.result) {
           alert('Clieint Created Sucess');
           this.loadClient();
+          this.clientObj = new Client();
         } else {
           alert(res.massage);
         }
       });
+  }
+  onEdit(data: Client) {
+    this.clientObj = data;
+  }
+  onDelete(id: number) {
+    const isDelete = confirm('Are you sure you want to delete?');
+    if (isDelete) {
+      this.clientService
+        .deletClientById(id)
+        .subscribe((res: APIResponseModel) => {
+          if (res.result) {
+            alert('Client Delete Success');
+            this.loadClient();
+          } else {
+            alert(res.massage);
+          }
+        });
+    }
   }
 }

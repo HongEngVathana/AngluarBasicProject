@@ -12,18 +12,18 @@ export class ClientService {
   constructor(private http: HttpClient) {}
   getAllClients(): Observable<APIResponseModel> {
     return this.http.get<APIResponseModel>(
-      environment.API_URL + 'GetAllDesignation'
+      environment.API_URL + 'GetAllClients'
     );
   }
   addUpadte(obj: Client): Observable<APIResponseModel> {
     return this.http.post<APIResponseModel>(
-      environment.API_URL + 'GetAllDesignation',
+      environment.API_URL + 'AddUpdateClient',
       obj
     );
   }
   deletClientById(id: number): Observable<APIResponseModel> {
-    return this.http.get<APIResponseModel>(
-      environment.API_URL + 'DeleteEmployeeByEmpId?empId=1'
+    return this.http.delete<APIResponseModel>(
+      environment.API_URL + 'DeleteClientByClientId?clientId=' + id
     );
   }
 }
