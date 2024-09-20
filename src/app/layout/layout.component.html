@@ -1,56 +1,3 @@
-<app-master> </app-master>
-<div class="container"></div>
-
-<div class="container">
-  <div class="col-3">
-    <h1>{{ fistName }}</h1>
-  </div>
-  <div class="col-3">
-    <h2>{{ hello }}</h2>
-    <p>{{ datetime }}</p>
-  </div>
-
-  <div class="row">
-    <div class="col-3">
-      <input type="text" [value]="fistName" class="form-control" />
-    </div>
-    <div class="col-3">
-      <input type="text" [(ngModel)]="fistName" />
-    </div>
-    <div class="col-3">
-      <input [type]="inputType" />
-    </div>
-    <div class="co-4"><input [type]="ChackBox" value="Hello" /></div>
-  </div>
-  <br /><br />
-  <div class="col-3">
-    {{ selectedState }}
-  </div>
-  <div class="col-3">
-    <select [(ngModel)]="selectedState">
-      <option value="MH">MH</option>
-      <option value="MP">MP</option>
-      <option value="Goa">Goa</option>
-    </select>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-3">
-      <button class="btn btn-success" (click)="showWelcomeAlert()">
-        ShowMessage
-      </button>
-    </div>
-    <div class="col-3">
-      <button
-        class="btn btn-success"
-        (click)="showMessage('Welcome to React ')"
-      >
-        ShowMessage
-      </button>
-    </div>
-  </div>
-</div>
-
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">Logo</a>
@@ -96,13 +43,13 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search" />
-        <button class="btn btn-primary" type="button">Search</button>
+        <button class="btn btn-primary" type="button" (click)="onLogoff()">
+          LogOff
+        </button>
       </form>
     </div>
   </div>
 </nav>
-
 <div class="container pt-1">
   <router-outlet></router-outlet>
 </div>
